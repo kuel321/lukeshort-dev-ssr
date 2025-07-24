@@ -1,0 +1,62 @@
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+  z-index: 1000;
+    box-shadow: 0 0.5px 0 rgba(255, 255, 255, 0.1);
+}
+
+
+.navbar-left {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-link {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar-link:hover {
+  color: white;
+}
+
+.navbar-divider {
+  color: #444;
+  user-select: none;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  transition: color 0.2s;
+}
+
+.theme-toggle:hover {
+  color: white;
+}

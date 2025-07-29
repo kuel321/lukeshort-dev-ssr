@@ -5,6 +5,7 @@ const {
 } = Astro.props;
 
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 
 import '../style.css';
 ---
@@ -44,7 +45,9 @@ import '../style.css';
 
   <body>
     <Navbar />
+
     <slot />
+  
   </body>
 </html>
 

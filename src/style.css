@@ -11,6 +11,7 @@ section {
 
 .project-grid {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 20px;
 }
 
@@ -80,7 +81,7 @@ section {
 }
 
 #background {
-	filter: grayscale(1);
+	filter: blur(20px) grayscale(29%);
 	/* filter: invert(1); */
 	position: fixed;
 	top: 0;
@@ -243,7 +244,9 @@ code {
 	border-radius: 16px;
 	border: 1px solid white;
 }
-
+.projects-page {
+	margin-top:0 !important; 
+}
 #news {
 	position: absolute;
 	bottom: 16px;
@@ -255,6 +258,7 @@ code {
 }
 
 .social-icons {
+	width: 100%;
 	margin-top: 1.5rem;
 	display: flex;
 	justify-content: center;
@@ -302,9 +306,16 @@ code {
 	font-size: 1.2rem;
 	text-decoration: underline;
 }
-
+.small-header {
+	font-size:24px;
+}
+.small-paragraph{
+	margin-bottom:1rem;
+	font-size:18px;
+}
 .site-footer {
-	width: 100%;
+	border-radius: 12px 12px 0px 0px;
+    width: 80%;
 	text-align: center;
 	background-color: #1e1e1e;
 	font-size: 0.9rem;

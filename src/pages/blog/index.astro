@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import background from "../../assets/background.svg";
+import Hero from '../../components/Hero.astro';
+const posts = await getCollection('blog');
+---
+
+<Layout title="Blog">
+    <div class="welcome-container" id="container">
+        <main>
+              <img
+                id="background"
+                src={background.src}
+                alt=""
+                fetchpriority="high"
+            />
+   <Hero
+                hero_title="Blog"
+                tagline=""
+                social={{
+                    linkedin: "https://linkedin.com/in/lukeshort",
+                    github: "https://github.com/lukeshort",
+                    email: "lukeshort321@gmail.com",
+                }}
+            />
+  <ul>
+    {posts.map(({ id, slug, data }) => (
+      <li>
+        <a href={`/blog/${slug}`}>
+          <h2>{data.title}</h2>
+          <p>{data.description}</p>
+          <small>{data.pubDate.toDateString()}</small>
+        </a>
+      </li>
+    ))}
+  </ul>
+</main>
+</div>
+</Layout>

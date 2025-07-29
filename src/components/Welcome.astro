@@ -1,34 +1,149 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import astroLogo from "../assets/astro.svg";
+import background from "../assets/background.svg";
+import Card from "./Card.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = [
+  {
+    title: "WVCams – Live Traffic Cameras Across West Virginia",
+    description:
+      "WVCams is a lightweight web app that provides real-time access to traffic cameras across West Virginia, including I-64, I-77, and other major roadways. Built for speed, reliability, and mobile-first usability, WVCams helps drivers, commuters, and travelers stay informed with live road conditions, closures, and crash updates—all in one place.",
+    image: "/wvcam-proj.png",
+    urlGitHub: "",
+    urlDemo: "https://wvcams.com",
+    featured: true,
+  },
+  {
+    title: "LLM-Integrated Control API for Anki Vector via WirePod",
+    description:
+      "A custom-built API layer that enhances Anki Vector with natural language capabilities by integrating a local LLM into the WirePod robotics framework. This project bridges conversational AI with embedded robotics, enabling Vector to parse, interpret, and respond to complex voice commands in real time. Designed for developers and roboticists, it extends Vector’s autonomy without relying on cloud services.",
+    image: "/vector-proj.png",
+    urlGitHub: "https://github.com/kuel321/wire-pod",
+    urlDemo: "",
+    featured: true,
+  },
+];
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<div class="centered">
-			<h1>Hi, I'm Luke Short</h1>
-			<p>Full Stack Web Engineering | Cloud-Native Architecture & DevOps | Secure Systems & Gov-Focused Work</p>
-			</div>
-			<div class="social-icons">
-  <a href="https://linkedin.com/in/lukeshort" target="_blank" aria-label="LinkedIn">
-    <img src="https://cdn.simpleicons.org/linkedin/ffffff" alt="LinkedIn" />
-  </a>
-  <a href="https://github.com/lukeshort" target="_blank" aria-label="GitHub">
-    <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" />
-  </a>
-  <a href="mailto:youremail@example.com" target="_blank" aria-label="Email">
-    <img src="https://cdn.simpleicons.org/maildotru/ffffff" alt="Email" />
-  </a>
+<div class="welcome-container" id="container">
+  <img id="background" src={background.src} alt="" fetchpriority="high" />
+  <main>
+    <section id="hero">
+      <div class="centered">
+        <h1>Hi, I'm Luke Short</h1>
+        <p>
+          Full Stack Web Engineering | Cloud-Native Architecture & DevOps |
+          Secure Systems & Gov-Focused Work
+        </p>
+      </div>
+      <div class="social-icons">
+        <a
+          href="https://linkedin.com/in/lukeshort"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <svg
+            height="32"
+            viewBox="0 0 24 24"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 
+      5-5v-14c0-2.76-2.24-5-5-5zm-11.75 19h-2.5v-9h2.5v9zm-1.25-10.28c-.83 
+      0-1.5-.68-1.5-1.5s.67-1.5 1.5-1.5c.82 0 1.5.68 1.5 
+      1.5s-.68 1.5-1.5 1.5zm13.25 10.28h-2.5v-4.5c0-1.08-.02-2.48-1.5-2.48-1.5
+      0-1.75 1.17-1.75 2.38v4.6h-2.5v-9h2.4v1.23h.03c.34-.65 1.16-1.33 
+      2.4-1.33 2.57 0 3.05 1.69 3.05 3.89v5.21z"
+            ></path></svg
+          >
+        </a>
+        <a
+          href="https://github.com/lukeshort"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" />
+        </a>
+        <a
+          href="mailto:youremail@example.com"
+          target="_blank"
+          aria-label="Email"
+        >
+          <img src="https://cdn.simpleicons.org/maildotru/ffffff" alt="Email" />
+        </a>
+      </div>
+    </section>
+    <section>
+      <Card />
+    </section>
+    <section class="projects">
+      <div>
+        <h2>My Projects</h2>
+        <p>
+          I can't show you my actual client work, but here are some personal
+          projects I'm proud of.
+        </p>
+        <div class="project-grid">
+          {projects.map((p) => <ProjectCard {...p} />)}
+        </div>
+      </div>
+    </section>
+    <section class="about-me">
+      <h2>About Me</h2>
+      <div class="card-container">
+        <p>
+          I'm a full stack developer based in West Virginia with a passion for
+          clean code, scalable systems, and building tools that actually get
+          used. I specialize in cloud-native architecture, modern JavaScript
+          frameworks, and secure systems for government and enterprise clients.
+        </p>
+        <p>
+          Whether it’s developing a real-time traffic camera platform for West
+          Virginia drivers or integrating conversational AI into robotics, I
+          enjoy turning complex problems into intuitive experiences. I build
+          with speed, reliability, and long-term maintainability in mind.
+        </p>
+        <p>
+          Outside of work, I’m always tinkering—whether it’s automating
+          something with Python, deploying services to a Raspberry Pi, or
+          experimenting with local AI models. I believe great software is both
+          invisible and impactful.
+        </p>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <h2>Get In Touch</h2>
+      <p>
+        If you're interested in working together, have a question, or just want
+        to connect, feel free to reach out.
+      </p>
+      <p>
+        <a href="mailto:lukeshort321@gmail.com" class="contact-link"
+          >lukeshort321@gmail.com</a
+        >
+      </p>
+    </section>
+
+    <footer class="site-footer">
+      <p class="minimal">
+        &copy; {new Date().getFullYear()} Luke Short. All rights reserved.
+      </p>
+      <div class="footer-links">
+        <a
+          href="https://linkedin.com/in/lukeshort"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn">LinkedIn</a
+        >
+        <a
+          href="https://github.com/lukeshort"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub">GitHub</a
+        >
+        <a href="mailto:lukeshort321@gmail.com" aria-label="Email">Email</a>
+      </div>
+    </footer>
+  </main>
 </div>
-
-			</section>
-		</section>
-	</main>
-
-	
-
-</div>
-
-

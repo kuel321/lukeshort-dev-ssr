@@ -1,0 +1,70 @@
+---
+const {
+    hero_title = "Luke Short",
+    tagline = "Full Stack Web Engineering | Cloud-Native Architecture & DevOps | Secure Systems & Gov-Focused Work",
+    social = {
+        linkedin: "https://linkedin.com/in/lukeshort",
+        github: "https://github.com/lukeshort",
+        email: "lukeshort321@gmail.com",
+    },
+} = Astro.props;
+---
+
+<section id="hero">
+    <div class="centered">
+        <h1>{hero_title}</h1>
+        <p>{tagline}</p>
+    </div>
+    <div class="social-icons">
+        {
+            social.linkedin && (
+                <a href={social.linkedin} target="_blank" aria-label="LinkedIn">
+                    <svg
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 
+            2.24 5 5 5h14c2.76 0 5-2.24 
+            5-5v-14c0-2.76-2.24-5-5-5zm-11.75 
+            19h-2.5v-9h2.5v9zm-1.25-10.28c-.83 
+            0-1.5-.68-1.5-1.5s.67-1.5 
+            1.5-1.5c.82 0 1.5.68 1.5 
+            1.5s-.68 1.5-1.5 1.5zm13.25 
+            10.28h-2.5v-4.5c0-1.08-.02-2.48-1.5-2.48-1.5 
+            0-1.75 1.17-1.75 2.38v4.6h-2.5v-9h2.4v1.23h.03c.34-.65 
+            1.16-1.33 2.4-1.33 2.57 0 3.05 
+            1.69 3.05 3.89v5.21z"
+                        />
+                    </svg>
+                </a>
+            )
+        }
+        {
+            social.github && (
+                <a href={social.github} target="_blank" aria-label="GitHub">
+                    <img
+                        src="https://cdn.simpleicons.org/github/ffffff"
+                        alt="GitHub"
+                    />
+                </a>
+            )
+        }
+        {
+            social.email && (
+                <a
+                    href={`mailto:${social.email}`}
+                    target="_blank"
+                    aria-label="Email"
+                >
+                    <img
+                        src="https://cdn.simpleicons.org/maildotru/ffffff"
+                        alt="Email"
+                    />
+                </a>
+            )
+        }
+    </div>
+</section>

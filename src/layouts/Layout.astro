@@ -3,6 +3,10 @@ const {
   title = "Luke Short | Software Engineer",
   description = "Full stack developer specializing in secure military applications and commercial web experiences using React, C#, Docker, and more.",
 } = Astro.props;
+
+import Navbar from "../components/Navbar.astro";
+
+import '../style.css';
 ---
 
 <!doctype html>
@@ -39,6 +43,7 @@ const {
   </head>
 
   <body>
+    <Navbar />
     <slot />
   </body>
 </html>

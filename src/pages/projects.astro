@@ -1,0 +1,118 @@
+---
+import background from "../assets/background.svg";
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Hero from "../components/Hero.astro";
+
+const projects = [
+    {
+        title: "WVCams – Live Traffic Cameras Across West Virginia",
+        description:
+            "WVCams is a lightweight web app that provides real-time access to traffic cameras across West Virginia, including I-64, I-77, and other major roadways. Built for speed, reliability, and mobile-first usability, WVCams helps drivers, commuters, and travelers stay informed with live road conditions, closures, and crash updates—all in one place.",
+        image: "/wvcam-proj.png",
+        urlGitHub: "",
+        urlDemo: "https://wvcams.com",
+        featured: true,
+    },
+    {
+        title: "LLM-Integrated Control API for Anki Vector via WirePod",
+        description:
+            "A custom-built API layer that enhances Anki Vector with natural language capabilities by integrating a local LLM into the WirePod robotics framework. This project bridges conversational AI with embedded robotics, enabling Vector to parse, interpret, and respond to complex voice commands in real time. Designed for developers and roboticists, it extends Vector’s autonomy without relying on cloud services.",
+        image: "/vector-proj.png",
+        urlGitHub: "https://github.com/kuel321/wire-pod",
+        urlDemo: "",
+        featured: true,
+    },
+];
+---
+
+<Layout>
+    <div class="welcome-container" id="container">
+        <img id="background" src={background.src} alt="" fetchpriority="high" />
+        <main>
+            <Hero
+                hero_title="Projects"
+                tagline=""
+                social={{
+                    linkedin: "https://linkedin.com/in/lukeshort",
+                    github: "https://github.com/lukeshort",
+                    email: "lukeshort321@gmail.com",
+                }}
+            />
+
+            <section></section>
+
+            <section class="projects">
+                <div>
+                    <h2>My Projects</h2>
+                    <p>
+                        I can't show you my actual client work, but here are
+                        some personal projects I'm proud of.
+                    </p>
+                    <div class="project-grid">
+                        {projects.map((p) => <ProjectCard {...p} />)}
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-me">
+                <h2>About Me</h2>
+                <div class="card-container">
+                    <p>
+                        I'm a full stack developer based in West Virginia with a
+                        passion for clean code, scalable systems, and building
+                        tools that actually get used. I specialize in
+                        cloud-native architecture, modern JavaScript frameworks,
+                        and secure systems for government and enterprise
+                        clients.
+                    </p>
+                    <p>
+                        Whether it’s developing a real-time traffic camera
+                        platform for West Virginia drivers or integrating
+                        conversational AI into robotics, I enjoy turning complex
+                        problems into intuitive experiences. I build with speed,
+                        reliability, and long-term maintainability in mind.
+                    </p>
+                    <p>
+                        Outside of work, I’m always tinkering—whether it’s
+                        automating something with Python, deploying services to
+                        a Raspberry Pi, or experimenting with local AI models. I
+                        believe great software is both invisible and impactful.
+                    </p>
+                </div>
+            </section>
+
+            <section class="contact" id="contact">
+                <h2>Get In Touch</h2>
+                <p>
+                    If you're interested in working together, have a question,
+                    or just want to connect, feel free to reach out.
+                </p>
+                <p>
+                    <a href="mailto:lukeshort321@gmail.com" class="contact-link"
+                        >lukeshort321@gmail.com</a
+                    >
+                </p>
+            </section>
+
+            <footer class="site-footer">
+                <p class="minimal">
+                    &copy; {new Date().getFullYear()} Luke Short. All rights reserved.
+                </p>
+                <div class="footer-links">
+                    <a
+                        href="https://linkedin.com/in/lukeshort"
+                        target="_blank"
+                        rel="noopener">LinkedIn</a
+                    >
+                    <a
+                        href="https://github.com/lukeshort"
+                        target="_blank"
+                        rel="noopener">GitHub</a
+                    >
+                    <a href="mailto:lukeshort321@gmail.com">Email</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+</Layout>

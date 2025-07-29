@@ -1,0 +1,86 @@
+---
+const certifications = [
+  {
+    title: "AWS Certified Developer – Associate",
+    issuer: "Amazon Web Services",
+    date: "Issued: April 13, 2023",
+    badge: "/aws-dva.png",
+    url: "https://www.credly.com/badges/fb96126d-0d8e-4e8b-99b3-059a8fb4b7e0/public_url", // Replace with actual path
+  },
+  {
+    title: "AWS Certified Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "Issued: April 13, 2023",
+    badge: "/aws-cp.png",
+    url: "https://www.credly.com/badges/c45782cb-8b14-4d64-b716-a9aaeee334f0/public_url", // Replace with actual path
+  },
+];
+---
+
+<style>
+  .cert-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .cert-card {
+    width: 384px;
+    display: flex;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 1.25rem;
+    align-items: flex-start;
+    gap: 1rem;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.04);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    transform: scale(1);
+  }
+
+  .cert-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.1);
+  }
+
+  .cert-grid a {
+    text-decoration: none;
+  }
+
+  .cert-card img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+  }
+
+  .cert-info h3 {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .cert-info p {
+    margin: 0.2rem 0;
+    color: #bbb;
+    font-size: 0.9rem;
+  }
+</style>
+
+<div class="cert-grid">
+  {
+    certifications.map((cert) => (
+      <a href={cert.url}>
+        <div class="cert-card">
+          <img src={cert.badge} alt={cert.title + " badge"} />
+          <div class="cert-info">
+            <h3>{cert.title}</h3>
+            <p>{cert.issuer}</p>
+            <p>{cert.date}</p>
+          </div>
+        </div>
+      </a>
+    ))
+  }
+</div>

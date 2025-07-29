@@ -1,17 +1,19 @@
 ---
-import { getEntryBySlug, getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-
+import { getEntryBySlug, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+import background from "../../assets/background.svg";
+import Footer from "../../components/Footer.astro";
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map(post => ({
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
     params: { slug: post.slug },
-    props: { slug: post.slug }
+    props: { slug: post.slug },
   }));
 }
 
 const { slug } = Astro.props;
-const post = await getEntryBySlug('blog', slug);
+const post = await getEntryBySlug("blog", slug);
 
 if (!post) {
   throw new Error(`Blog post not found for slug: ${slug}`);
@@ -22,9 +24,24 @@ const { data } = post;
 ---
 
 <Layout title={data.title}>
-  <article class="blog-post">
-    <h1>{data.title}</h1>
-    <p><small>{data.pubDate.toDateString()}</small></p>
-    <Content />
-  </article>
+  <div class="welcome-container" id="container">
+    <main>
+      <img id="background" src={background.src} alt="" fetchpriority="high" />
+      <Hero
+        hero_title="Blog"
+        tagline=""
+        social={{
+          linkedin: "https://linkedin.com/in/lukeshort",
+          github: "https://github.com/lukeshort",
+          email: "lukeshort321@gmail.com",
+        }}
+      />
+      <article class="blog-post">
+        <h1>{data.title}</h1>
+        <p><small>{data.pubDate.toDateString()}</small></p>
+        <Content />
+      </article>
+      <Footer />
+    </main>
+  </div>
 </Layout>

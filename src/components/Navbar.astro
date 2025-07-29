@@ -1,9 +1,8 @@
 ---
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
   { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
 ];
 ---
 
@@ -12,12 +11,16 @@ const links = [
     <span class="navbar-title">Luke Short | Portfolio</span>
   </div>
   <div class="navbar-right">
-    {links.map((link, i) => (
-      <>
-        <a href={link.href} class="navbar-link">{link.label}</a>
-        {i < links.length - 1 && <span class="navbar-divider">|</span>}
-      </>
-    ))}
+    {
+      links.map((link, i) => (
+        <>
+          <a href={link.href} class="navbar-link">
+            {link.label}
+          </a>
+          {i < links.length - 1 && <span class="navbar-divider">|</span>}
+        </>
+      ))
+    }
     <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
   </div>
 </nav>

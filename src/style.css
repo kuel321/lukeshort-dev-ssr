@@ -99,6 +99,7 @@ section {
 }
 
 .welcome-container {
+	min-height: 90vh;
 	background-color: black;
 	padding-top: 5rem;
 }
@@ -244,9 +245,11 @@ code {
 	border-radius: 16px;
 	border: 1px solid white;
 }
+
 .projects-page {
-	margin-top:0 !important; 
+	margin-top: 0 !important;
 }
+
 #news {
 	position: absolute;
 	bottom: 16px;
@@ -306,16 +309,19 @@ code {
 	font-size: 1.2rem;
 	text-decoration: underline;
 }
+
 .small-header {
-	font-size:24px;
+	font-size: 24px;
 }
-.small-paragraph{
-	margin-bottom:1rem;
-	font-size:18px;
+
+.small-paragraph {
+	margin-bottom: 1rem;
+	font-size: 18px;
 }
+
 .site-footer {
 	border-radius: 12px 12px 0px 0px;
-    width: 80%;
+	width: 80%;
 	text-align: center;
 	background-color: #1e1e1e;
 	font-size: 0.9rem;

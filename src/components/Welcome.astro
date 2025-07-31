@@ -26,92 +26,82 @@ const projects = [
 ];
 ---
 
+<img id="background" src={background.src} alt="" fetchpriority="high" />
 
-  <img id="background" src={background.src} alt="" fetchpriority="high" />
- 
-    <section id="hero">
-      <div class="centered">
-        <h1>Hi, I'm Luke Short</h1>
-        <p>
-          Full Stack Web Engineering | Cloud-Native Architecture & DevOps |
-          Secure Systems & Gov-Focused Work
-        </p>
-      </div>
-      <div class="social-icons">
-        <a
-          href="https://linkedin.com/in/lukeshort"
-          target="_blank"
-          aria-label="LinkedIn"
-        >
-          <svg
-            height="32"
-            viewBox="0 0 24 24"
-            fill="white"
-            xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 
+<section id="hero">
+  <div class="centered">
+    <h1>Hi, I'm Luke Short</h1>
+    <p>
+      Full Stack Web Engineering | Cloud-Native Architecture & DevOps | Secure
+      Systems & Gov-Focused Work
+    </p>
+  </div>
+  <div class="social-icons">
+    <a
+      href="https://linkedin.com/in/lukeshort"
+      target="_blank"
+      aria-label="LinkedIn"
+    >
+      <svg
+        height="32"
+        viewBox="0 0 24 24"
+        fill="white"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
+          d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 
       5-5v-14c0-2.76-2.24-5-5-5zm-11.75 19h-2.5v-9h2.5v9zm-1.25-10.28c-.83 
       0-1.5-.68-1.5-1.5s.67-1.5 1.5-1.5c.82 0 1.5.68 1.5 
       1.5s-.68 1.5-1.5 1.5zm13.25 10.28h-2.5v-4.5c0-1.08-.02-2.48-1.5-2.48-1.5
       0-1.75 1.17-1.75 2.38v4.6h-2.5v-9h2.4v1.23h.03c.34-.65 1.16-1.33 
       2.4-1.33 2.57 0 3.05 1.69 3.05 3.89v5.21z"
-            ></path></svg
-          >
-        </a>
-        <a
-          href="https://github.com/lukeshort"
-          target="_blank"
-          aria-label="GitHub"
-        >
-          <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" />
-        </a>
-        <a
-          href="mailto:youremail@example.com"
-          target="_blank"
-          aria-label="Email"
-        >
-          <img src="https://cdn.simpleicons.org/maildotru/ffffff" alt="Email" />
-        </a>
-      </div>
-    </section>
-    <section>
-      <Card />
-    </section>
-    <section class="projects">
-      <div>
-        <h2>My Projects</h2>
-        <p>
-          I can't show you my actual client work, but here are some personal
-          projects I'm proud of.
-        </p>
-        <div class="project-grid">
-          {projects.map((p) => <ProjectCard {...p} />)}
-        </div>
-      </div>
-    </section>
-    <section class="about-me">
-      <h2>About Me</h2>
-      <div class="card-container">
-        <p>
-          I'm a full stack developer based in West Virginia with a passion for
-          clean code, scalable systems, and building tools that actually get
-          used. I specialize in cloud-native architecture, modern JavaScript
-          frameworks, and secure systems for government and enterprise clients.
-        </p>
-        <p>
-          Whether it’s developing a real-time traffic camera platform for West
-          Virginia drivers or integrating conversational AI into robotics, I
-          enjoy turning complex problems into intuitive experiences. I build
-          with speed, reliability, and long-term maintainability in mind.
-        </p>
-        <p>
-          Outside of work, I’m always tinkering—whether it’s automating
-          something with Python, deploying services to a Raspberry Pi, or
-          experimenting with local AI models. I believe great software is both
-          invisible and impactful.
-        </p>
-      </div>
-    </section>
- 
+        ></path></svg
+      >
+    </a>
+    <a href="https://github.com/lukeshort" target="_blank" aria-label="GitHub">
+      <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" />
+    </a>
+    <a href="mailto:youremail@example.com" target="_blank" aria-label="Email">
+      <img src="https://cdn.simpleicons.org/maildotru/ffffff" alt="Email" />
+    </a>
+  </div>
+</section>
+<section>
+  <Card />
+</section>
+<section class="projects">
+  <div>
+    <h2>My Projects</h2>
 
+    <p class="project-intro">
+      I can't show you my actual client work, but here are some personal
+      projects I'm proud of.
+    </p>
 
+    <div class="project-grid">
+      {projects.map((p) => <ProjectCard {...p} />)}
+    </div>
+    <a href="/projects" class="view-all-link">View All</a>
+  </div>
+</section>
+<section class="about-me">
+  <h2>About Me</h2>
+  <div class="card-container">
+    <p>
+      I'm a full stack developer based in West Virginia with a passion for clean
+      code, scalable systems, and building tools that actually get used. I
+      specialize in cloud-native architecture, modern JavaScript frameworks, and
+      secure systems for government and enterprise clients.
+    </p>
+    <p>
+      Whether it’s developing a real-time traffic camera platform for West
+      Virginia drivers or integrating conversational AI into robotics, I enjoy
+      turning complex problems into intuitive experiences. I build with speed,
+      reliability, and long-term maintainability in mind.
+    </p>
+    <p>
+      Outside of work, I’m always tinkering—whether it’s automating something
+      with Python, deploying services to a Raspberry Pi, or experimenting with
+      local AI models. I believe great software is both invisible and impactful.
+    </p>
+  </div>
+</section>

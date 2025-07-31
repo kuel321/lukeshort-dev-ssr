@@ -36,11 +36,16 @@ const { data } = post;
           email: "lukeshort321@gmail.com",
         }}
       />
-      <article class="blog-post">
-        <h1>{data.title}</h1>
-        <p><small>{data.pubDate.toDateString()}</small></p>
-        <Content />
-      </article>
+      <section class="blog-container">
+        <article class="blog-post">
+          <h2>{data.title}</h2>
+          <a href="/blog" class="blog-return-link">← All Posts</a>
+          <p class="blog-date">
+            <small>{data.pubDate.toDateString()}, Luke Short</small>
+          </p>
+          <Content />
+        </article>
+      </section>
       <Footer />
     </main>
   </div>

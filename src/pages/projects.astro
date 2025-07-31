@@ -22,7 +22,8 @@ const projects = [
         urlGitHub: "https://github.com/kuel321/wire-pod",
         urlDemo: "",
         featured: true,
-    },  {
+    },
+    {
         title: "AI Traffic Estimation System",
         description:
             "A Python-based traffic estimator that predicts road congestion levels using live or historical data. Designed for quick deployment and easy integration with traffic APIs or datasets.",
@@ -30,7 +31,8 @@ const projects = [
         urlGitHub: "https://github.com/kuel321/TrafficEstimatorAI",
         urlDemo: "",
         featured: false,
-    },{
+    },
+    {
         title: "Tiny Mailbox – A Minimalist Email Client",
         description:
             "A lightweight mailbox app built with Preact, offering fast performance and minimal UI for viewing and organizing messages. Ideal for embedding or customizing in small-scale projects.",
@@ -42,7 +44,10 @@ const projects = [
 ];
 ---
 
-<Layout>
+<Layout
+    title="Luke Short | Projects"
+    description="Explore my personal projects, showcasing my work in full stack development, cloud-native architecture, and secure systems."
+>
     <div class="welcome-container" id="container">
         <main>
             <img
@@ -52,15 +57,7 @@ const projects = [
                 fetchpriority="high"
             />
 
-            <Hero
-                hero_title="Projects"
-                tagline=""
-                social={{
-                    linkedin: "https://linkedin.com/in/lukeshort",
-                    github: "https://github.com/lukeshort",
-                    email: "lukeshort321@gmail.com",
-                }}
-            />
+            <Hero hero_title="Projects" tagline="" />
 
             <section></section>
 
@@ -77,9 +74,7 @@ const projects = [
                 </div>
             </section>
 
-         
-
-    <Footer />
+            <Footer />
         </main>
     </div>
 </Layout>

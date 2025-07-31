@@ -7,23 +7,18 @@ import Footer from "../../components/Footer.astro";
 const posts = await getCollection("blog");
 ---
 
-<Layout title="Blog">
+<Layout
+  title="Luke Short | Blog"
+  description="Follow along as I share updates, behind-the-scenes progress, and lessons learned from my personal and professional coding projects."
+>
   <div class="welcome-container" id="container">
     <main>
       <img id="background" src={background.src} alt="" fetchpriority="high" />
-      <Hero
-        hero_title="Blog"
-        tagline=""
-        social={{
-          linkedin: "https://linkedin.com/in/lukeshort",
-          github: "https://github.com/lukeshort",
-          email: "lukeshort321@gmail.com",
-        }}
-      />
-      <ul>
+      <Hero hero_title="Blog" tagline="" />
+      <ul class="blog-list">
         {
           posts.map(({ id, slug, data }) => (
-            <li>
+            <li class="blog-item">
               <a href={`/blog/${slug}`}>
                 <h2>{data.title}</h2>
                 <p>{data.description}</p>

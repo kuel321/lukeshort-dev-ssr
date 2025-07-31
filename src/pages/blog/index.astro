@@ -15,19 +15,21 @@ const posts = await getCollection("blog");
     <main>
       <img id="background" src={background.src} alt="" fetchpriority="high" />
       <Hero hero_title="Blog" tagline="" />
-      <ul class="blog-list">
-        {
-          posts.map(({ id, slug, data }) => (
-            <li class="blog-item">
-              <a href={`/blog/${slug}`}>
-                <h2>{data.title}</h2>
-                <p>{data.description}</p>
-                <small>{data.pubDate.toDateString()}</small>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <section class="blog-container">
+        <ul class="blog-list">
+          {
+            posts.map(({ id, slug, data }) => (
+              <li class="blog-item">
+                <a href={`/blog/${slug}`}>
+                  <h2>{data.title}</h2>
+                  <p>{data.description}</p>
+                  <small>{data.pubDate.toDateString()}</small>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
       <Footer />
     </main>
   </div>

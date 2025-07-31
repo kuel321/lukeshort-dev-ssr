@@ -20,9 +20,19 @@ section {
 
 }
 
+.blog-container a {
+	color: #5f2484;
+}
+
+.blog-container a:visited {
+	color: #5f2484;
+}
+
 .blog-list {
 	min-height: 60vh;
-	align-items: flex-start !important;
+	align-items: baseline !important;
+
+	flex-direction: column;
 }
 
 .project-grid {

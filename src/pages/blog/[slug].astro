@@ -12,7 +12,8 @@ export async function getStaticPaths() {
   }));
 }
 
-const { slug } = Astro.props;
+const { slug } = Astro.params;
+
 const post = await getEntryBySlug("blog", slug);
 
 if (!post) {
@@ -23,7 +24,7 @@ const { Content } = await post.render();
 const { data } = post;
 ---
 
-<Layout title={data.title}>
+<Layout title={data.title} description={data.description}>
   <div class="welcome-container" id="container">
     <main>
       <img id="background" src={background.src} alt="" fetchpriority="high" />
